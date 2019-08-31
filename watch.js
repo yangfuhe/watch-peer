@@ -7,7 +7,7 @@ let getMaxHeight = () => {
         let cmdBlock = `curl -X POST --data '{"funName":"getBlock", "args":{ "which": "latest", "transactions": true}}' http://localhost:7001/rpc`;
         exec(cmdBlock, function(err, stdout, srderr) {
             if (err) {
-                reject({ err: "异常" });
+                reject(maxHeight);
             } else {
                 let height = JSON.parse(stdout).block.number;
                 resolve(height)
@@ -30,12 +30,13 @@ let watchPeer = async() => {
             if (err1) {
                 console.log(srderr1)
             } else {
-                fs.appendFile('./peer-log.txt', `\n ${moment().format("YYYY-MM-DD hh:mm:ss")},已为您重启，块高${maxHeight}`, (error) => {})
-                console.log("已为您重启peer")
+                console.log(`\n ${moment().format("YYYY-MM-DD hh:mm:ss")},已为您重启，块高${maxHeight}`)
             }
         })
     }
 }
+
+
 
 let run = async() => {
     console.log("开始监控peer")
