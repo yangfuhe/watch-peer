@@ -1,0 +1,22 @@
+{
+  "name": "watch-peer",
+  "version": "1.0.0",
+  "description": "监控peer节点",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangfuhe/watch-peer.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangfuhe/watch-peer.js/issues"
+  },
+  "homepage": "https://github.com/yangfuhe/watch-peer.js#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
