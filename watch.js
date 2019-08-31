@@ -7,7 +7,7 @@ let getMaxHeight = () => {
         let cmdBlock = `curl -X POST --data '{"funName":"getBlock", "args":{ "which": "latest", "transactions": true}}' http://localhost:7001/rpc`;
         exec(cmdBlock, function(err, stdout, srderr) {
             if (err) {
-                reject(maxHeight);
+                resolve(maxHeight);
             } else {
                 let height = JSON.parse(stdout).block.number;
                 resolve(height)
